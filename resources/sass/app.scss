@@ -1,11 +1,17 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url("https://fonts.googleapis.com/css?family=Nunito");
 
 // Variables
-@import 'variables';
+@import "variables";
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
+
+//Font Awesome
+@import "~@fortawesome/fontawesome-free/scss/brands";
+@import "~@fortawesome/fontawesome-free/scss/regular";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
 
 .counters {
     margin-right: 30px;
@@ -42,9 +48,48 @@
     .view {
         margin-top: 10px;
     }
-
 }
 
 form.form-delete {
-        display: inline;
+    display: inline;
+}
+
+.vote-controls {
+    min-width: 60px;
+    margin-right: 30px;
+    text-align: center;
+    color: $gray-700; 
+
+    span, a {
+        display: block;
     }
+
+    span {
+        &.votes-count {
+            font-size: 25 px;
+        }
+
+        &.favorites-count {
+            font-size: 12px;
+        }
+    }
+
+    a {
+        cursor: pointer;
+        color: $gray-600;
+
+        &.off, &.off:hover {
+            color: $gray-500;
+        }
+
+        &.favorite {
+            &.favorited, &.favorited:hover {
+                color: $warning;
+            }
+        }
+
+        &.vote-accepted {
+            color: $green;          
+        }
+    }
+}
