@@ -18,6 +18,10 @@ class Answer extends Model
         return \Parsedown::instance()->text($this->body);
     }
 
+    public function getCreatedDateAttribute(){
+        return $this->created_at->diffForHumans();
+    }
+
     public static function boot(){
         parent::boot();
 

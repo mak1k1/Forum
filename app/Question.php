@@ -40,7 +40,8 @@ class Question extends Model
 
     public function getBodyHtmlAttribute(){
         return \Parsedown::instance()->text($this->body);
-        // $questions->answers()->count();
+        // 
+        $questions->answers()->count();
     }
 
     public function answers(){
