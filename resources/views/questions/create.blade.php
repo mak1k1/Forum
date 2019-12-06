@@ -16,7 +16,7 @@
                 </div>
 
                 <div class="card-body">
-                    <form action="#" method="post">
+                    <form action="{{ route('questions.store') }}" method="post">
                         @csrf
                         <div class="form-group">
                             <label for="question-title">Question title</label>
