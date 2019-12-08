@@ -28,6 +28,15 @@ class Answer extends Model
         return $this->id === $this->question->best_answer_id ? 'vote-accepted' : '';
     }
 
+
+    public function getIsBestAttribute(){
+        return $this->isBest();
+    }
+
+    public function isBest(){
+        return $this->id === $this->question->best_answer_id;
+    }
+
     public static function boot(){
         parent::boot();
 
@@ -39,4 +48,5 @@ class Answer extends Model
             $answer->question->decrement('answers_count');
         });
     }
+
 }
